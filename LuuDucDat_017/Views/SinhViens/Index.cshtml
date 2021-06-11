@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LuuDucDat_017.Models.SinhVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sinh Viên</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới sinh viên", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaLop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenLop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaSinhVien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSinhVien)
+        </th>
+        <th>Chỉnh sửa</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaLop)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenLop)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaSinhVien)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenSinhVien)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaLop }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaLop }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaLop })
+    </td>
+</tr>
+}
+
+</table>
